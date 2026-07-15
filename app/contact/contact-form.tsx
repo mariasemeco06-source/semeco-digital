@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { services } from "./app/site-data";
+import { services } from "../site-data";
 
 type Status = "idle" | "success" | "error";
 
