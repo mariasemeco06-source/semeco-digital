@@ -20,7 +20,7 @@ export function ConsultationForm(){
     try {
       const encoded=new URLSearchParams();
       data.forEach((value,key)=>encoded.append(key,typeof value==="string"?value:value.name));
-      const response=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:encoded.toString()});
+      const response = await fetch("/__forms.html", {method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:encoded.toString()});
       if(!response.ok) throw new Error("Submission failed");
       setStatus("success");form.reset();setMessage("");
     } catch { setStatus("error"); }
